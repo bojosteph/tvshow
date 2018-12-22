@@ -6,10 +6,10 @@ require "TvShow/version"
 Gem::Specification.new do |spec|
   spec.name          = "TvShow"
   spec.version       = TvShow::VERSION
-  spec.authors       = ["bojosteph"]
+  spec.authors       = ["Roberto Samia"]
   spec.email         = ["bojosteph@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
+  spec.summary       = %q{This is a program for listing tvshows with show info and summary using API from TvMaze}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
@@ -38,4 +38,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "httparty", "~> 0.16.3"
+  spec.add_development_dependency "pry", ">= 0"
 end

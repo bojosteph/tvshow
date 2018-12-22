@@ -1,6 +1,10 @@
-require "TvShow/version"
+require 'httparty'
+require 'pry'
+require 'open-uri'
 
-module TvShow
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative './tvshow/version'
+require_relative './tvshow/cli'
+require_relative './tvshow/show'
+require_relative './tvshow/scraper'
+require_relative './tvshow/genre'
+require_relative './tvshow/type'
