@@ -20,6 +20,7 @@ Or install it yourself as:
 ## Usage
 Run TvShow by executing ./bin/tvbin
 Follow the CLI prompts
+- You can search shows by keyword example "Mars" or "Law and Order"
 - You can list shows by 'name', 'type', 'genre'
 - Type number corresponding to the Show in the list and hit enter to show more info on the show.
 - Type 'show type' to list show with same type
