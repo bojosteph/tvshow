@@ -102,10 +102,11 @@ class TvShow::CLI
        TvShow::Cast.find_or_create_by_id(id)
         result = TvShow::Cast.all.each do |cast|
          puts cast.name.colorize(:yellow) 
-      end
+       end
      print "Show NAME  :".colorize(:green)
      puts result[0].show
   end
+
 
 
   def list_type
@@ -144,18 +145,19 @@ class TvShow::CLI
 
      input = gets.strip.to_i
 
-     unless (1..TvShow::Show.all.length).include?(input)
-       puts "ERROR Please input valid number !!!!!".colorize(:red)
-     end  
-       show = TvShow::Show.all.sort{ |a, b| a.name <=> b.name }[input - 1]
+      if (1..TvShow::Show.all.length).include?(input)
+        show = TvShow::Show.all.sort{ |a, b| a.name <=> b.name }[input - 1]
        line
         print"#{show.name}".colorize(:cyan).ljust(35)
         print "#{show.type}".colorize(:blue).center(10)
         print"#{show.genres}".gsub(/[^0-9A-Za-z]/," ").colorize(:red).rjust(30) +"\n" 
        new_line
         puts " #{show.summary}".gsub(/<.*?>/, " ").colorize(:green).rjust(19) +"\n"
-       new_line 
+       new_line
+      else
+        puts "Please input a valid number!!!".colorize(:red)
    end
+  end
 
   
   def find_by_type
