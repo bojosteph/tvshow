@@ -95,16 +95,21 @@ class TvShow::CLI
 
   def show_cast
     list_show_by_rating
-      reset_cast
-       puts "Please enter number corresponding to show to list Cast Member"
-       id = gets.strip
-       puts "Cast Name".colorize(:green)
-       TvShow::Cast.find_or_create_by_id(id)
-        result = TvShow::Cast.all.each do |cast|
-         puts cast.name.colorize(:yellow) 
-       end
-     print "Show NAME  :".colorize(:green)
-     puts result[0].show
+    reset_cast
+      puts "Please enter number corresponding to show to list Cast Member"
+      id = gets.strip
+    begin
+      puts "Cast Name".colorize(:green)
+      TvShow::Cast.find_or_create_by_id(id)
+      result = TvShow::Cast.all.each do |cast|
+      puts cast.name.colorize(:yellow) 
+      end
+      print "Show NAME  :".colorize(:green)
+      puts result[0].show
+    rescue 
+      puts "There is no  Cast info on this Show ".colorize(:red)
+      return
+    end
   end
 
 
