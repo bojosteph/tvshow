@@ -1,7 +1,7 @@
 
 class TvShow::Type
   include Initialize
-  include Findable
+  extend Findable
 
   attr_accessor :show, :name, :genre 
 
@@ -17,11 +17,10 @@ class TvShow::Type
 
   def self.create_from_show_hash
     TvShow::Show.all.collect do |show|
-      type = TvShow::Type.new
+    type = TvShow::Type.new
       type.show = show.name
       type.name = show.type
       type.genre = show.genres
-      type
     end
   end
     

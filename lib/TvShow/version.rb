@@ -1,10 +1,9 @@
 module TvShow
-	
   VERSION = "0.1.0"
 end
 
 module Initialize
-    def initialize(attributes={})
+  def initialize(attributes={})
     attributes.each {|key, value| self.send(("#{key}="), value)}
     self.class.all << self
   end
